@@ -4,28 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E4C8F1"
     tools:context=".activity_5">
 
-    <Button
-        android:id="@+id/buttonLlamada"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="316dp"
-        android:onClick="llamada"
-        android:text="Button"
+    <TextView
+        android:id="@+id/textViewYA"
+        android:layout_width="288dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginRight="82dp"
+        android:foregroundGravity="center"
+        android:text="Si hay maltrato, ¡¡no lo dudes!!, LLAMA"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonWeb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="316dp"
-        android:layout_marginEnd="91dp"
-        android:layout_marginRight="91dp"
-        android:text="Button"
+    <ImageView
+        android:id="@+id/imageView016"
+        android:layout_width="164dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="208dp"
+        android:clickable="true"
+        android:onClick="llamada"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewYA"
+        app:srcCompat="@drawable/denuncia" />
+
+    <ImageView
+        android:id="@+id/imageViewGuardiaCivil"
+        android:layout_width="106dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:clickable="true"
+        android:onClick="web"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewYA"
+        app:srcCompat="@drawable/GuardiaCivil" />
 </androidx.constraintlayout.widget.ConstraintLayout>
