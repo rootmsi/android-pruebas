@@ -13,4 +13,6 @@
 
     <string name="A4_enunciado">¿Hay algo que quieras preguntar acerca del tema?</string>
     <string name="A4_boton">Enviar SMS</string>
+
+    <string name="A5_boton">Marcar 016</string>
 </resources>
