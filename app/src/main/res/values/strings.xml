@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">git</string>
-    <string name="bt1">bt01</string>
+    <string name="A1_enunciado">¿Crees que existe algún caso de violencia de género en tu entorno?</string>
+    <string name="A1_boton1">No lo creo</string>
+    <string name="A1_boton2">Sí, creo que existe</string>
+    <string name="A1_boton3">Sí, lo estoy sufriendo</string>
 </resources>
