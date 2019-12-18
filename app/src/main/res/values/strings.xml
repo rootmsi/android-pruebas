@@ -17,4 +17,12 @@
 
     <string name="A5_descripcionGuardiaCivil">Extracto de la página web de la guardía civil</string>
     <string name="A5_descripcion016">Marcar 016</string>
+
+    <string name="A6_pregunta1">¿Alguna vez has levantado la mano a otra persona?</string>
+    <string name="A6_res11">Sí</string>
+    <string name="A6_res12">No</string>
+
+    <string name="A6_pregunta2">¿Colaboras en las tareas domésticas?</string>
+
+    <string name="A6_pregunta3">¿Estás de acuerdo con que se financien los moviemientos feministas?</string>
 </resources>

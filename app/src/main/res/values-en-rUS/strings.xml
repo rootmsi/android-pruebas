@@ -15,4 +15,12 @@
 
     <string name="A4_enunciado">¿Hay algo que quieras preguntar acerca del tema?</string>
     <string name="A4_boton">Send SMS</string>
+
+    <string name="A6_pregunta1">Have you ever raise your hand to another person?</string>
+    <string name="A6_res11">Yes</string>
+    <string name="A6_res12">No</string>
+
+    <string name="A6_pregunta2">Do you collaborate in housework?</string>
+
+    <string name="A6_pregunta3">Do you agree with the financing of feminist movements?</string>
 </resources>
