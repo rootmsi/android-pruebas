@@ -7,18 +7,24 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.net.URI;
 
 public class activity_5 extends AppCompatActivity {
- Button llamada, web;
-
+ ImageView llamada,web;
+ TextView ya;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_5);
+        llamada=findViewById(R.id.imageView016);
+        web=findViewById(R.id.imageViewGuardiaCivil);
+        ya=findViewById(R.id.textViewYA);
+
     }
     public  void llamada(View view){
         Intent llamada= new Intent(Intent.ACTION_DIAL);

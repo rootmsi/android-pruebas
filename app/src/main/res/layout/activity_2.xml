@@ -21,25 +21,29 @@
             android:id="@+id/button5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:onClick="ira3"
+            android:text="@string/A1_boton1" />
 
         <Button
             android:id="@+id/button6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:onClick="ira4"
+            android:text="@string/A1_boton2" />
 
         <Button
             android:id="@+id/button7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:onClick="ira5"
+            android:text="@string/A1_boton3" />
     </LinearLayout>
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="422dp"
         android:layout_height="193dp"
+        android:contentDescription="@A2_imagen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ojo" />
