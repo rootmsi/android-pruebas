@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">git</string>
+    <string name="bt1">Iniciar</string>
     <string name="A1_titulo">Bienvenido</string>
 
     <string name="A2_enunciado">¿Crees que existe algún caso de violencia de género en tu entorno?</string>
@@ -13,4 +14,6 @@
 
     <string name="A4_enunciado">¿Hay algo que quieras preguntar acerca del tema?</string>
     <string name="A4_boton">Enviar SMS</string>
+
+    <string name="A5_boton">Marcar 016</string>
 </resources>
