@@ -9,20 +9,20 @@
 
     <Button
         android:id="@+id/BotonSiguiente"
-        android:layout_width="120dp"
-        android:layout_height="71dp"
+        android:layout_width="156dp"
+        android:layout_height="81dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="404dp"
+        android:layout_marginTop="220dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:background="#00000000"
+        android:background="#00020101"
         android:onClick="continuar"
         android:text="@string/bt1"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.465"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
