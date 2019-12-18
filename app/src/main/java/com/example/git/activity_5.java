@@ -14,7 +14,7 @@ import java.net.URI;
 
 public class activity_5 extends AppCompatActivity {
  ImageView llamada,web;
- TextView ya,info016, guardiaCivil;
+ TextView info016, guardiaCivil;
 
 
     @Override
@@ -23,7 +23,7 @@ public class activity_5 extends AppCompatActivity {
         setContentView(R.layout.activity_5);
         llamada=findViewById(R.id.imageView016);
         web=findViewById(R.id.imageViewGuardiaCivil);
-        ya=findViewById(R.id.textViewYA);
+        
         guardiaCivil=findViewById(R.id.textViewGC);
         info016=findViewById(R.id.textView016);
     }
