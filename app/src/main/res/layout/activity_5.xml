@@ -4,73 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EEDAF8"
+    android:background="@drawable/tarjeta016"
     tools:context=".activity_5">
-
-    <TextView
-        android:id="@+id/textViewYA"
-        android:layout_width="288dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="82dp"
-        android:layout_marginRight="82dp"
-        android:foregroundGravity="center"
-        android:text="Si hay maltrato, ¡¡no lo dudes!!, LLAMA"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView016"
         android:layout_width="164dp"
         android:layout_height="99dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="276dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:clickable="false"
         android:contentDescription="@string/A5_descripcion016"
         android:onClick="llamada"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewYA"
+        app:layout_constraintTop_toBottomOf="@+id/textView016"
         app:srcCompat="@drawable/denuncia" />
 
     <ImageView
         android:id="@+id/imageViewGuardiaCivil"
-        android:layout_width="106dp"
-        android:layout_height="108dp"
-        android:layout_marginTop="276dp"
+        android:layout_width="104dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="84dp"
         android:layout_marginRight="84dp"
         android:clickable="false"
         android:contentDescription="@string/A5_descripcionGuardiaCivil"
         android:onClick="web"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewYA"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGC"
         app:srcCompat="@drawable/guadiasivil" />
 
     <TextView
         android:id="@+id/textView016"
-        android:layout_width="113dp"
-        android:layout_height="33dp"
+        android:layout_width="121dp"
+        android:layout_height="30dp"
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
-        android:layout_marginTop="232dp"
+        android:layout_marginTop="307dp"
         android:text="Llamar al 016"
+        android:textColor="#FAFAFA"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewYA" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewGC"
-        android:layout_width="147dp"
+        android:layout_width="161dp"
         android:layout_height="42dp"
-        android:layout_marginTop="232dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
-        android:text="Denunciar a la Guardia Civil"
+        android:layout_marginTop="292dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:text="Denuncia a la Guardia Civil"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewYA" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
