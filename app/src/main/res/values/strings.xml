@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">git</string>
+    <string name="app_name">Hacia la igualdad</string>
+    <string name="bt1">Iniciar</string>
     <string name="A1_titulo">Bienvenido</string>
 
     <string name="A2_enunciado">¿Crees que existe algún caso de violencia de género en tu entorno?</string>
@@ -8,9 +9,12 @@
     <string name="A2_boton3">Sí, lo estoy sufriendo</string>
     <string name="A2_imagen"></string>
 
-    <string name="A3_titulo">¿Estás seguro de que no lo sufres?</string>
+    <string name="A3_titulo">¿Estás seguro de que no existe?</string>
     <string name="A3_subtitulo">A ver si ves algo fuera de lo normal en el siguiente ejemplo</string>
 
-    <string name="A4_enunciado">¿Hay algo que quieras preguntar acerca del tema?</string>
+    <string name="A4_enunciado">¿Te gustaría colaborar con una ONG para reducir la desigualdad con solo un SMS de 1,20€?</string>
     <string name="A4_boton">Enviar SMS</string>
+
+    <string name="A5_descripcionGuardiaCivil">Extracto de la página web de la guardía civil</string>
+    <string name="A5_descripcion016">Marcar 016</string>
 </resources>

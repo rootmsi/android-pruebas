@@ -14,7 +14,7 @@ import java.net.URI;
 
 public class activity_5 extends AppCompatActivity {
  ImageView llamada,web;
- TextView ya;
+ TextView ya,info016, guardiaCivil;
 
 
     @Override
@@ -24,7 +24,8 @@ public class activity_5 extends AppCompatActivity {
         llamada=findViewById(R.id.imageView016);
         web=findViewById(R.id.imageViewGuardiaCivil);
         ya=findViewById(R.id.textViewYA);
-
+        guardiaCivil=findViewById(R.id.textViewGC);
+        info016=findViewById(R.id.textView016);
     }
     public  void llamada(View view){
         Intent llamada= new Intent(Intent.ACTION_DIAL);
