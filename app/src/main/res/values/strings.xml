@@ -26,4 +26,7 @@
 
     <string name="A6_pregunta3">¿Estás de acuerdo con que se financien los moviemientos feministas?</string>
     <string name="A6_btnEnviar">ENVIAR</string>
+
+    <string name="menu_Cuestionario">Cuestionario</string>
+    <string name="menu_acerca">Acerca de</string>
 </resources>
