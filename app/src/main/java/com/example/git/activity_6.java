@@ -21,6 +21,7 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
 
     RadioButton respuesta11, respuesta12, respuesta21, respuesta22, respuesta31, respuesta32;
 
+    Boolean conexionCorrecta=true;  //Terminar esto
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,11 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
 
         actualizarBaseDeDatos(resultadoConsulta);
 
-        cambiarActivity();
+        if (conexionCorrecta) {
+            cambiarActivity();
+        } else {
+            Toast.makeText(this, "Error al subir a la base de datos!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private ResultSet obtenerResultset() {
