@@ -47,5 +47,5 @@
         android:onClick="web"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewYA"
-        app:srcCompat="@drawable/GuardiaCivil" />
+        app:srcCompat="@drawable/guardiacivil" />
 </androidx.constraintlayout.widget.ConstraintLayout>
