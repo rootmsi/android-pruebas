@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.net.URI;
+
 public class activity_5 extends AppCompatActivity {
- Button llamada;
+ Button llamada, web;
 
 
 
@@ -22,6 +24,11 @@ public class activity_5 extends AppCompatActivity {
         Intent llamada= new Intent(Intent.ACTION_DIAL);
         llamada.setData(Uri.parse("tel:016"));
         startActivity(llamada);
-
+    }
+    public  void  web(View view){
+        String direccion="http://www.guardiacivil.es/es/servicios/violenciadegeneroabusodemenores/abusosexualmenores/index.html";
+        Uri webpage = Uri.parse(direccion);
+        Intent web= new Intent(Intent.ACTION_VIEW,webpage);
+        startActivity(web);
     }
 }
