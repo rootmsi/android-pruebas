@@ -17,11 +17,13 @@ import java.sql.Statement;
 
 public class activity_6 extends AppCompatActivity implements View.OnClickListener {
 
-    Button enviar;
+    Button boton;
 
     RadioButton respuesta11, respuesta12, respuesta21, respuesta22, respuesta31, respuesta32;
 
     Boolean conexionCorrecta=true;
+
+    Statement conexion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,34 +37,103 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
         respuesta31=findViewById(R.id.rbPreg3Si);
         respuesta32=findViewById(R.id.rbPreg3No);
 
-        enviar=findViewById(R.id.btnEnviar);
+        boton=findViewById(R.id.btnEnviar);
 
-        enviar.setOnClickListener(this);
+        boton.setOnClickListener(this);
+
+
     }
 
     @Override
     public void onClick(View v) {
 
-        ResultSet resultadoConsulta = obtenerResultset("SELECT respuesta1, respuesta2 FROM cuestionario;");
+        //Si el botón tiene como texto "ENVIAR" crea la conexión y hace los SELECT y UPDATE. Si no lo es cambia de activity (esto se debe a que si ya has enviado tus datos el texto del botón cambia a "VER COMENTARIOS")
+        if (boton.getText().equals("ENVIAR")) {
 
-        if (resultadoConsulta!=null) {
+            //Si todas las respuestas están respondidas se ejecuta este if.
             if ((respuesta11.isChecked() || respuesta12.isChecked()) && (respuesta21.isChecked() || respuesta22.isChecked()) && (respuesta31.isChecked() || respuesta32.isChecked())) {
-                actualizarBaseDeDatos(resultadoConsulta);
+
+                //Se conecta al servidor.
+                obtenerStatement();
+
+                //Si ocurrió un error al conectarse al servidor se ejecuta el "else". Si funcionó la conexion al servidor continúa el "if".
+                if (conexionCorrecta) {
+
+                    //Ejecuta el SELECT. Si ocurre una excepción "resultadoConsulta" será "NULL".
+                    ResultSet resultadoConsulta = obtenerResultsetConsulta("SELECT respuesta1, respuesta2 FROM cuestionario;");
+
+                    //Nos aseguramos de que no ocurrieran errores al recuperar los datos de la base de datos.
+                    if (resultadoConsulta != null) {
+                        actualizarBaseDeDatos(resultadoConsulta);   //Ejecutamos el UPDATE.
+                    }
+
+                    //Si el SELECT y el UPDATE se ejecutaron correctamente "conexionCorrecta" será true y se mostrarán los resultados. En caso contrario imprime una alerta y no pasa al nuevo activity.
+                    if (conexionCorrecta && resultadoConsulta != null) {
+
+                        mostrarResultados(resultadoConsulta);   //Mostrar resultados.
+
+                    } else {
+                        errorAlConectarAlServidor();    //Imprime alerta de que falló algo durante la conexión (SELECT o UPDATE).
+                    }
+                } else {
+                    errorAlConectarAlServidor();    //Imprime alerta de que falló algo durante la conexión (STATEMENT).
+                }
+
             } else {
+                //Esto se ejecuta cunado no se han respondido todas las preguntas.
                 Toast.makeText(this, "Por favor, responda todas las preguntas antes de continuar", Toast.LENGTH_SHORT).show();
             }
-        }
 
-        if (conexionCorrecta) {
-            cambiarActivity();
         } else {
-            Toast.makeText(this, "Error al subir a la base de datos!", Toast.LENGTH_SHORT).show();
+            //Esto se ejecuta cuando el texto del botón en "VER COMENTARIOS" y no "ENVIAR" (es decir, cuando ya se han enviado los datos del formulario al servidor).
+            cambiarActivity();
         }
     }
 
-    private ResultSet obtenerResultset(String consulta) {
+    private void mostrarResultados(ResultSet resultadoConsulta) {
         try {
-            return obtenerStatement().executeQuery(consulta);
+
+            RadioButton primeraRespuesta, segundaRespuesta;
+
+            boton.setText("VER COMENTARIOS");
+
+            for (int i=1; i<=3; i++) {
+                resultadoConsulta.absolute(i);
+
+                if (i==1) {
+                    primeraRespuesta=respuesta11;
+                    segundaRespuesta=respuesta12;
+                } else if (i==2) {
+                    primeraRespuesta=respuesta21;
+                    segundaRespuesta=respuesta22;
+                } else {
+                    primeraRespuesta=respuesta31;
+                    segundaRespuesta=respuesta32;
+                }
+
+                if (primeraRespuesta.isChecked()) {
+                    primeraRespuesta.setText(resultadoConsulta.getInt(2));
+                    continue;
+                } else if (segundaRespuesta.isChecked()) {
+                    segundaRespuesta.setText(resultadoConsulta.getInt(3));
+                    continue;
+                }
+            }
+
+        } catch (SQLException e) {
+            Toast.makeText(this, "Se han cargado sus datos al servidor, pero ha ocurrido un error al mostarlos en su dispositivo", Toast.LENGTH_SHORT).show();
+            //e.printStackTrace();
+        }
+    }
+
+    private void errorAlConectarAlServidor() {
+        //Imprimir alert con error de conexion al servidor.
+        Toast.makeText(this, "Ha ocurrido un error al conectar con el servidor. Inténtelo de nuevo más tarde", Toast.LENGTH_SHORT).show();
+    }
+
+    private ResultSet obtenerResultsetConsulta(String consulta) {
+        try {
+            return conexion.executeQuery(consulta);
         } catch (SQLException e) {
             conexionCorrecta=false;
             //e.printStackTrace();
@@ -90,10 +161,10 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
                 }
 
                 if (primeraRespuesta.isChecked()) {
-                    obtenerStatement().executeUpdate("UPDATE cuestionario SET respuesta1=\""+(resultadoConsulta.getInt(2) + 1)+"\" WHERE id=\""+i+"\";");
+                    conexion.executeUpdate("UPDATE cuestionario SET respuesta1=\""+(resultadoConsulta.getInt(2) + 1)+"\" WHERE id=\""+i+"\";");
                     continue;
                 } else if (segundaRespuesta.isChecked()) {
-                    obtenerStatement().executeUpdate("UPDATE cuestionario SET respuesta2=\""+(resultadoConsulta.getInt(3) + 1)+"\" WHERE id=\""+i+"\";");
+                    conexion.executeUpdate("UPDATE cuestionario SET respuesta2=\""+(resultadoConsulta.getInt(3) + 1)+"\" WHERE id=\""+i+"\";");
                     continue;
                 }
             }
@@ -104,12 +175,21 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
         }
     }
 
-    private Statement obtenerStatement() {
-        try {
-            return DriverManager.getConnection("jdbc:postgresql://rogdomain.ddns.net:5432", "generico", "generico").createStatement();
-        } catch (SQLException e) {
+    private void obtenerStatement() {
+
+        int contadorIntentosDeConexion=0;
+
+        do{
+            try {
+                conexion = DriverManager.getConnection("jdbc:postgresql://rogdomain.ddns.net:5432", "generico", "generico").createStatement();
+            } catch (SQLException e) {
+                conexion = null;
+            }
+            contadorIntentosDeConexion++;
+        } while (conexion==null && contadorIntentosDeConexion<10);
+
+        if (conexion==null) {
             conexionCorrecta=false;
-            return null;    //Cuando podamos hacer pruebas hay que comprobar que ocurre cuando este método retorna "null" (cuando no encuentre el servidor).
         }
     }
 
