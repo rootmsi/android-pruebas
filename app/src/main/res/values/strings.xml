@@ -12,7 +12,7 @@
     <string name="A3_titulo">¿Estás seguro de que no existe?</string>
     <string name="A3_subtitulo">A ver si ves algo fuera de lo normal en el siguiente ejemplo</string>
 
-    <string name="A4_enunciado">Global Humanitaria es una ONG que desarrolla proyectos para reducir la desigualdad de género en muchos países del mundo, si quieres colaborar pulsa el boton SMS</string>
+    <string name="A4_enunciado">Global Humanitaria es una ONG que desarrolla proyectos para reducir la desigualdad de género en muchos países del mundo, si quieres colaborar pulsa el boton SMS.</string>
     <string name="A4_boton">Enviar SMS</string>
 
     <string name="A5_descripcionGuardiaCivil">Extracto de la página web de la guardía civil</string>
