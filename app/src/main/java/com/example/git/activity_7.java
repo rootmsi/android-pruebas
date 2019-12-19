@@ -35,7 +35,7 @@ public class activity_7 extends AppCompatActivity {
         }
 
         //Si el comentario no está vacío insertarlo
-        if (!comentario.getText().equals("")) {
+        if (!comentario.getText().toString().equals("")) {
             insertarComentario();
         }
 
@@ -77,7 +77,7 @@ public class activity_7 extends AppCompatActivity {
 
     //Insertar el comentario
     private void insertarComentario() {
-        String insertar="INSERT INTO comentarios (comentario) VALUES ("+comentario.getText()+");";
+        String insertar="INSERT INTO comentarios (comentario) VALUES ("+comentario.getText().toString()+");";
 
 
 

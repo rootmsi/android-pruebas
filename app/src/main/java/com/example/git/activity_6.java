@@ -114,10 +114,10 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
 
                 if (primeraRespuesta.isChecked()) {
                     primeraRespuesta.setText(resultadoConsulta.getInt(1));  //Index 1 porque la consulta SELECT no recupera el ID. Solo dos columnas en total
-                    continue;
+                    //continue;
                 } else if (segundaRespuesta.isChecked()) {
                     segundaRespuesta.setText(resultadoConsulta.getInt(2));  //Index 2 porque la consulta SELECT no recupera el ID. Solo dos columnas en total
-                    continue;
+                    //continue;
                 }
             }
 
@@ -164,10 +164,10 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
 
                 if (primeraRespuesta.isChecked()) {
                     conexion.executeUpdate("UPDATE cuestionario SET respuesta1=\""+(resultadoConsulta.getInt(1) + 1)+"\" WHERE id=\""+i+"\";");
-                    continue;
+                    //continue;
                 } else if (segundaRespuesta.isChecked()) {
                     conexion.executeUpdate("UPDATE cuestionario SET respuesta2=\""+(resultadoConsulta.getInt(2) + 1)+"\" WHERE id=\""+i+"\";");
-                    continue;
+                    //continue;
                 }
             }
 
