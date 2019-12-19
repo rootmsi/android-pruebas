@@ -11,7 +11,12 @@
         android:id="@+id/imageView"
         android:layout_width="414dp"
         android:layout_height="204dp"
+        android:layout_marginBottom="100dp"
         android:contentDescription="@A2_imagen"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ojo" />
 
     <LinearLayout
@@ -28,7 +33,6 @@
             android:id="@+id/tvp2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autoText="false"
             android:gravity="center|center_horizontal"
             android:text="@string/A2_enunciado"
             android:textColor="#000000"
