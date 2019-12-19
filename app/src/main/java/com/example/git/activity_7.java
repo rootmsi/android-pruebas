@@ -44,7 +44,7 @@ public class activity_7 extends AppCompatActivity {
 
         do{
             try {
-                conexion = DriverManager.getConnection("jdbc:postgresql://rogdomain.ddns.net:5432", "generico", "generico").createStatement();
+                conexion = DriverManager.getConnection("jdbc:postgresql://rogdomain.ddns.net:5432/hacialaigualdad", "generico", "generico").createStatement();
             } catch (SQLException e) {
                 conexion = null;
             }

@@ -185,7 +185,7 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
 
         do{
             try {
-                conexion = DriverManager.getConnection("jdbc:postgresql://rogdomain.ddns.net:5432", "generico", "generico").createStatement();
+                conexion = DriverManager.getConnection("jdbc:postgresql://rogdomain.ddns.net:5432/hacialaigualdad", "generico", "generico").createStatement();
             } catch (SQLException e) {
                 conexion = null;
             }
