@@ -6,38 +6,63 @@
     android:layout_height="match_parent"
     tools:context=".activity_3">
 
-    <TextView
-        android:id="@+id/textView4"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="171dp"
-        android:layout_marginLeft="171dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="181dp"
-        android:layout_marginRight="181dp"
-        android:text="@string/A3_titulo"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:fontFamily="monospace"
+        android:layout_marginEnd="41dp"
+        android:layout_marginRight="41dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:text="@string/A3_subtitulo"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:fontFamily="monospace"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/A3_titulo" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/fotochico" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="189dp"
+            android:layout_height="414dp"
+            app:srcCompat="@drawable/fotochica" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonSi"
+                android:layout_width="127dp"
+                android:layout_height="83dp"
+                android:text="SÍ" />
+
+            <Button
+                android:id="@+id/buttonNo"
+                android:layout_width="127dp"
+                android:layout_height="83dp"
+                android:text="NO" />
+        </LinearLayout>
+    </LinearLayout>
+    <![CDATA[
+
+    @string/A3_titulo"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    app:fontFamily="monospace"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+
+]]>
 </androidx.constraintlayout.widget.ConstraintLayout>
