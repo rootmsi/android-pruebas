@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Hacia la igualdad</string>
+    <string name="app_name">To the equality</string>
     <string name="bt1">Start</string>
     <string name="A1_titulo">Wellcome</string>
 
@@ -13,8 +13,11 @@
     <string name="A3_titulo">Are yor sure it doesn`t exist?</string>
     <string name="A3_subtitulo">Let´s see if you see something out of the ordinary in the following example</string>
 
-    <string name="A4_enunciado">¿Hay algo que quieras preguntar acerca del tema?</string>
+    <string name="A4_enunciado">Global Humanitarian is an NGO that developes projects to reduce gender inequality in many countries around the world, if you want to colaborate press the SMS button.</string>
     <string name="A4_boton">Send SMS</string>
+
+    <string name="A5_descripcionGuardiaCivil">Excerpt from the civil guard website</string>
+    <string name="A5_descripcion016">Dial 016</string>
 
     <string name="A6_pregunta1">Have you ever raise your hand to another person?</string>
     <string name="A6_res11">Yes</string>
@@ -26,6 +29,7 @@
     <string name="A6_btnEnviar">SEND</string>
 
     <string name="A7_titulo">Do you want to send us a comment with your vision on the matter?</string>
+    <string name="A7_boton">Enviar comentario</string>
 
     <string name="menu_Cuestionario">Questionnaire</string>
     <string name="menu_acerca">About</string>

@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#6A721357"
     tools:context=".activity_2">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="182dp"
         android:layout_height="174dp"
-        android:layout_marginStart="284dp"
-        android:layout_marginLeft="284dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginLeft="272dp"
+        android:layout_marginTop="76dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <Button
             android:id="@+id/button5"
@@ -41,11 +42,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="422dp"
-        android:layout_height="193dp"
+        android:layout_width="403dp"
+        android:layout_height="179dp"
         android:layout_marginStart="152dp"
         android:layout_marginLeft="152dp"
-        android:layout_marginTop="16dp"
         android:contentDescription="@string/A2_imagen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
