@@ -115,16 +115,17 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
                 }
 
                 if (primeraRespuesta.isChecked()) {
-                    primeraRespuesta.setText(resultadoConsulta.getInt(2));
+                    primeraRespuesta.setText(resultadoConsulta.getInt(1));  //Index 1 porque la consulta SELECT no recupera el ID. Solo dos columnas en total
                     continue;
                 } else if (segundaRespuesta.isChecked()) {
-                    segundaRespuesta.setText(resultadoConsulta.getInt(3));
+                    segundaRespuesta.setText(resultadoConsulta.getInt(2));  //Index 2 porque la consulta SELECT no recupera el ID. Solo dos columnas en total
                     continue;
                 }
             }
 
         } catch (SQLException e) {
-            Toast.makeText(this, "Se han cargado sus datos al servidor, pero ha ocurrido un error al mostarlos en su dispositivo", Toast.LENGTH_SHORT).show();
+            //Convertir en en una alerta:
+            Toast.makeText(this, "Se han cargado sus datos al servidor, pero ha ocurrido un error al mostrarlos en su dispositivo", Toast.LENGTH_SHORT).show();
             //e.printStackTrace();
         }
     }
@@ -164,10 +165,10 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
                 }
 
                 if (primeraRespuesta.isChecked()) {
-                    conexion.executeUpdate("UPDATE cuestionario SET respuesta1=\""+(resultadoConsulta.getInt(2) + 1)+"\" WHERE id=\""+i+"\";");
+                    conexion.executeUpdate("UPDATE cuestionario SET respuesta1=\""+(resultadoConsulta.getInt(1) + 1)+"\" WHERE id=\""+i+"\";");
                     continue;
                 } else if (segundaRespuesta.isChecked()) {
-                    conexion.executeUpdate("UPDATE cuestionario SET respuesta2=\""+(resultadoConsulta.getInt(3) + 1)+"\" WHERE id=\""+i+"\";");
+                    conexion.executeUpdate("UPDATE cuestionario SET respuesta2=\""+(resultadoConsulta.getInt(2) + 1)+"\" WHERE id=\""+i+"\";");
                     continue;
                 }
             }
