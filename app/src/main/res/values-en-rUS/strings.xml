@@ -27,4 +27,10 @@
 
     <string name="menu_Cuestionario">Questionnaire</string>
     <string name="menu_acerca">About</string>
+
+    <string name="directores">Project managers</string>
+    <string name="manu">Manuel S. García Mora</string>
+    <string name="javi">Javier Fernandez Bastante</string>
+    <string name="paloma">Paloma Sanchez</string>
+
 </resources>

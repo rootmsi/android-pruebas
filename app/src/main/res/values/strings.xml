@@ -29,4 +29,11 @@
 
     <string name="menu_Cuestionario">Cuestionario</string>
     <string name="menu_acerca">Acerca de</string>
+
+    <string name="directores">Directores de proyecto</string>
+    <string name="manu">Manuel S. García Mora</string>
+    <string name="javi">Javier Fernandez Bastante</string>
+    <string name="paloma">Paloma Sanchez</string>
+
+
 </resources>
