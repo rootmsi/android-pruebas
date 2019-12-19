@@ -1,13 +1,18 @@
 package com.example.git;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class activity_4 extends AppCompatActivity implements View.OnClickListener {
 
@@ -28,12 +33,38 @@ public class activity_4 extends AppCompatActivity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setData(Uri.parse("smsto:"));  // This ensures only SMS apps respond
-        intent.putExtra("sms_body", "IGUALDAD");
-      //  intent.putExtra(Intent.EXTRA_STREAM, attachment);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
+        AlertDialog.Builder builder= new AlertDialog.Builder(this);
+        builder.setTitle("Se enviará un SMS con coste 1,20€");
+        builder.setMessage("¿Quieres continuar?");
+        builder.setPositiveButton("Sí", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                String numero="28099";
+                String mensaje="IGUALDAD";
+                try {
+                    SmsManager smgr = SmsManager.getDefault();
+                    smgr.sendTextMessage(numero, null, mensaje, null, null);
+                    Toast.makeText(activity_4.this, "Enviado correctamente", Toast.LENGTH_LONG).show();
+                }catch (Exception e){
+                    Toast.makeText(activity_4.this, "No se ha podiod enviar", Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
+                }
+
+
+        //        Toast.makeText( "Seguimos", Toast.LENGTH_LONG).show();
+            }
+        });
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(activity_4.this, "Denegado", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        Dialog dialog = builder.create();
+        dialog.show();
+
+
     }
 }
