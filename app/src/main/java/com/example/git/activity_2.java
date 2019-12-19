@@ -61,6 +61,10 @@ public class activity_2 extends AppCompatActivity {
             intent = new Intent(this, activity_8.class);
             startActivity(intent);
         }
+        if(id == R.id.item_comen){
+            intent = new Intent(this, activity_7.class);
+            startActivity(intent);
+        }
 
         return super.onOptionsItemSelected(item);
     }

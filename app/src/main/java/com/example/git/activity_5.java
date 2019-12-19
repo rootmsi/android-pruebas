@@ -51,6 +51,11 @@ public class activity_5 extends AppCompatActivity {
             startActivity(intent);
         }
 
+        if(id == R.id.item_comen){
+            intent = new Intent(this, activity_7.class);
+            startActivity(intent);
+        }
+
         return super.onOptionsItemSelected(item);
     }
     public  void llamada(View view){
