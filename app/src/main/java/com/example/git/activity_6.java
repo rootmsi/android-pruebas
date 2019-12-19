@@ -43,8 +43,6 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
         boton=findViewById(R.id.btnEnviar);
 
         boton.setOnClickListener(this);
-
-
     }
 
     @Override
