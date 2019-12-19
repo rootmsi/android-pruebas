@@ -3,6 +3,8 @@ package com.example.git;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import java.sql.DriverManager;
@@ -11,9 +13,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class activity_7 extends AppCompatActivity {
+public class activity_7 extends AppCompatActivity implements View.OnClickListener {
 
     EditText comentario;
+    Button boton;
 
     Boolean conexionCorrecta=false;
 
@@ -24,7 +27,10 @@ public class activity_7 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_7);
 
+        boton = findViewById(R.id.btnComentario);
+        boton.setOnClickListener(this);
         comentario=findViewById(R.id.etComentario); //Aquí va el id del editText de comentario que aun no habeis creado.
+
 
         //Conectar a la base de datos.
         obtenerStatement();
@@ -76,7 +82,7 @@ public class activity_7 extends AppCompatActivity {
 
 
     //Insertar el comentario
-    private void insertarComentario() {
+    private void insertarComentario() { //Te he puesto lo mismo onClick del boton, sino no me dejaba ponerle el evento, cambialo si quieres
         String insertar="INSERT INTO comentarios (comentario) VALUES ("+comentario.getText().toString()+");";
 
 
@@ -95,5 +101,14 @@ public class activity_7 extends AppCompatActivity {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+        String insertar="INSERT INTO comentarios (comentario) VALUES ("+comentario.getText().toString()+");";
+
+
+
+        //No está terminado.
     }
 }
