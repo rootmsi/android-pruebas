@@ -7,26 +7,23 @@
     tools:context=".activity_3">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2"
+        android:layout_width="436dp"
+        android:layout_height="338dp"
         android:layout_marginEnd="41dp"
         android:layout_marginRight="41dp"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/A3_titulo" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19999999">
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="225dp"
+            android:layout_height="415dp"
             app:srcCompat="@drawable/fotochico" />
 
         <ImageView
@@ -35,25 +32,49 @@
             android:layout_height="414dp"
             app:srcCompat="@drawable/fotochica" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/buttonSi"
-                android:layout_width="127dp"
-                android:layout_height="83dp"
-                android:text="SÍ" />
-
-            <Button
-                android:id="@+id/buttonNo"
-                android:layout_width="127dp"
-                android:layout_height="83dp"
-                android:text="NO" />
-        </LinearLayout>
     </LinearLayout>
-    <![CDATA[
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/A3_titulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="261dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginRight="88dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <Button
+            android:id="@+id/buttonSi"
+            android:layout_width="127dp"
+            android:layout_height="83dp"
+            android:text="SÍ" />
+
+        <Button
+            android:id="@+id/buttonNo"
+            android:layout_width="127dp"
+            android:layout_height="83dp"
+            android:text="NO" />
+    </LinearLayout><![CDATA[
+
+
 
     @string/A3_titulo"
     android:textSize="18sp"
@@ -62,6 +83,7 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
+
 
 
 ]]>

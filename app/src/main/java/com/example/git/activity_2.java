@@ -33,6 +33,9 @@ public class activity_2 extends AppCompatActivity {
 
     public void ira4(View view) {
 
+        /*Intent ir = new Intent(this, activity_4.class);
+        startActivity(ir);*/
+
         Intent ir = new Intent(this, activity_4.class);
         startActivity(ir);
 

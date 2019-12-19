@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonSMS"
         android:layout_width="125dp"
         android:layout_height="73dp"
         android:layout_marginStart="165dp"

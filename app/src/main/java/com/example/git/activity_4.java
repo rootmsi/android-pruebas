@@ -27,7 +27,7 @@ public class activity_4 extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_4);
 
-        texto=findViewById(R.id.tvdenuncia);
+        //texto=findViewById(R.id.tvdenuncia);
         boton=findViewById(R.id.buttonSMS);
 
         boton.setOnClickListener(this);
