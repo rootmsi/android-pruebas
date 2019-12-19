@@ -21,7 +21,7 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
 
     RadioButton respuesta11, respuesta12, respuesta21, respuesta22, respuesta31, respuesta32;
 
-    Boolean conexionCorrecta=true;  //Terminar esto
+    Boolean conexionCorrecta=true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +43,15 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
     @Override
     public void onClick(View v) {
 
-        ResultSet resultadoConsulta = obtenerResultset();
+        ResultSet resultadoConsulta = obtenerResultset("SELECT respuesta1, respuesta2 FROM cuestionario;");
 
-        actualizarBaseDeDatos(resultadoConsulta);
+        if (resultadoConsulta!=null) {
+            if ((respuesta11.isChecked() || respuesta12.isChecked()) && (respuesta21.isChecked() || respuesta22.isChecked()) && (respuesta31.isChecked() || respuesta32.isChecked())) {
+                actualizarBaseDeDatos(resultadoConsulta);
+            } else {
+                Toast.makeText(this, "Por favor, responda todas las preguntas antes de continuar", Toast.LENGTH_SHORT).show();
+            }
+        }
 
         if (conexionCorrecta) {
             cambiarActivity();
@@ -54,11 +60,12 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
         }
     }
 
-    private ResultSet obtenerResultset() {
+    private ResultSet obtenerResultset(String consulta) {
         try {
-            return obtenerStatement().executeQuery("SELECT respuesta1, respuesta2 FROM cuestionario;");
+            return obtenerStatement().executeQuery(consulta);
         } catch (SQLException e) {
-            e.printStackTrace();
+            conexionCorrecta=false;
+            //e.printStackTrace();
             return null;
         }
     }
@@ -88,14 +95,12 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
                 } else if (segundaRespuesta.isChecked()) {
                     obtenerStatement().executeUpdate("UPDATE cuestionario SET respuesta2=\""+(resultadoConsulta.getInt(3) + 1)+"\" WHERE id=\""+i+"\";");
                     continue;
-                } else {
-                    Toast.makeText(this, "respuesta "+i+" sin contestar", Toast.LENGTH_SHORT).show();
                 }
             }
 
         } catch (SQLException e) {
-            Toast.makeText(this, "Error comprobar las preguntas elegidas!", Toast.LENGTH_SHORT).show();
-            e.printStackTrace();
+            conexionCorrecta=false;
+            //e.printStackTrace();
         }
     }
 
@@ -103,7 +108,8 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
         try {
             return DriverManager.getConnection("jdbc:postgresql://rogdomain.ddns.net:5432", "generico", "generico").createStatement();
         } catch (SQLException e) {
-            return null;
+            conexionCorrecta=false;
+            return null;    //Cuando podamos hacer pruebas hay que comprobar que ocurre cuando este método retorna "null" (cuando no encuentre el servidor).
         }
     }
 
