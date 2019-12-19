@@ -14,11 +14,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class activity_4 extends AppCompatActivity implements View.OnClickListener {
 
-    EditText texto;
+    TextView texto;
     Button boton;
 
     @Override
@@ -26,7 +27,7 @@ public class activity_4 extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_4);
 
-        texto=findViewById(R.id.editTextDenuncia);
+        texto=findViewById(R.id.tvdenuncia);
         boton=findViewById(R.id.buttonSMS);
 
         boton.setOnClickListener(this);
