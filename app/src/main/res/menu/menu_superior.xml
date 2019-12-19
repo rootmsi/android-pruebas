@@ -5,9 +5,6 @@
         android:id="@+id/item_cues"
         android:title="@string/menu_Cuestionario" />
     <item
-        android:id="@+id/item_comen"
-        android:title="Comentario" />
-    <item
         android:id="@+id/item_acerca"
         android:title="@string/menu_acerca" />
 </menu>
