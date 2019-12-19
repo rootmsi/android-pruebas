@@ -23,7 +23,7 @@ public class activity_5 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_5);
-
+        
         llamada=findViewById(R.id.imageView016);
         web=findViewById(R.id.imageViewGuardiaCivil);
         
@@ -51,6 +51,10 @@ public class activity_5 extends AppCompatActivity {
             startActivity(intent);
         }
 
+        if(id == R.id.item_comen){
+            intent = new Intent(this, activity_7.class);
+            startActivity(intent);
+        }
 
         return super.onOptionsItemSelected(item);
     }
