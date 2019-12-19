@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -20,6 +21,8 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
     Button boton;
 
     RadioButton respuesta11, respuesta12, respuesta21, respuesta22, respuesta31, respuesta32;
+
+    EditText comentario;    //Hacer que el contenido del editText ejecute un INSERT en la columna comentario de la tabla comentarios del servidor.
 
     Boolean conexionCorrecta=true;
 
