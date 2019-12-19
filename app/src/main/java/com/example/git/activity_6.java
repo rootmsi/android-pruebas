@@ -66,6 +66,7 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
                     //Nos aseguramos de que no ocurrieran errores al recuperar los datos de la base de datos.
                     if (resultadoConsulta != null) {
                         actualizarBaseDeDatos(resultadoConsulta);   //Ejecutamos el UPDATE.
+                         Toast.makeText(this, "Se han insertado los registros", Toast.LENGTH_SHORT).show();
                     }
 
                     //Si el SELECT y el UPDATE se ejecutaron correctamente "conexionCorrecta" será true y se mostrarán los resultados. En caso contrario imprime una alerta y no pasa al nuevo activity.
@@ -87,7 +88,7 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
 
         } else {
             //Esto se ejecuta cuando el texto del botón en "VER COMENTARIOS" y no "ENVIAR" (es decir, cuando ya se han enviado los datos del formulario al servidor).
-            cambiarActivity();
+            //cambiarActivity();
         }
     }
 
@@ -164,9 +165,15 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
 
                 if (primeraRespuesta.isChecked()) {
                     conexion.executeUpdate("UPDATE cuestionario SET respuesta1=\""+(resultadoConsulta.getInt(1) + 1)+"\" WHERE id=\""+i+"\";");
+
+                    Toast.makeText(this, "Se han insertado los registros", Toast.LENGTH_SHORT).show();
+
                     //continue;
                 } else if (segundaRespuesta.isChecked()) {
                     conexion.executeUpdate("UPDATE cuestionario SET respuesta2=\""+(resultadoConsulta.getInt(2) + 1)+"\" WHERE id=\""+i+"\";");
+
+                    Toast.makeText(this, "Se han insertado los registros", Toast.LENGTH_SHORT).show();
+
                     //continue;
                 }
             }
@@ -195,9 +202,9 @@ public class activity_6 extends AppCompatActivity implements View.OnClickListene
         }
     }
 
-    private void cambiarActivity() {
+    /*private void cambiarActivity() {
         Intent intent=new Intent(this, activity_7.class);
         startActivity(intent);
-    }
+    }*/
 
 }

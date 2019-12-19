@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':driver_postgresql', ':postgresql-42.2.9'
 rootProject.name='git'

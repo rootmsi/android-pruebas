@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,7 +22,7 @@ public class activity_7 extends AppCompatActivity implements View.OnClickListene
 
     Boolean conexionCorrecta=false;
 
-    Statement conexion;
+    Connection conexion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,87 +30,50 @@ public class activity_7 extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.activity_7);
 
         boton = findViewById(R.id.btnComentario);
-        boton.setOnClickListener(this);
-        comentario=findViewById(R.id.etComentario); //Aquí va el id del editText de comentario que aun no habeis creado.
 
+        comentario = findViewById(R.id.etComentario); //Aquí va el id del editText de comentario que aun no habeis creado.
 
-        //Conectar a la base de datos.
-        obtenerStatement();
+        //oton.setOnClickListener(this);
 
-        //Si la conexion fue bien hacer la consulta
-        if (conexionCorrecta) {
-            obtenerResultsetConsulta("SELECT comentario FROM comentarios;");
-        }
-
-        //Si el comentario no está vacío insertarlo
-        if (!comentario.getText().toString().equals("")) {
-            insertarComentario();
-        }
-
-        //Cerrar la conexion.
-        cerrarConexion();
-    }
-
-    //Ejecutar el select
-    private ResultSet obtenerResultsetConsulta(String consulta) {
         try {
-            return conexion.executeQuery(consulta);
-        } catch (SQLException e) {
-            conexionCorrecta=false;
+
+
+            Toast.makeText(this, "Entre guei", Toast.LENGTH_LONG).show();
+            Class.forName("org.postgresql.Driver");
+
+            Toast.makeText(this, "Driver OK", Toast.LENGTH_LONG).show();
+
+        } catch (ClassNotFoundException e) {
             //e.printStackTrace();
-            return null;
+
+            Toast.makeText(this, "Driver not found", Toast.LENGTH_LONG).show();
+
         }
-    }
 
-    //Conexión a la base de datos.
-    private void obtenerStatement() {
-        int contadorIntentosDeConexion=0;
+        String url;
 
-        //Si no se consigue conectar vuelve a intentar hasta 10 veces.
-        do{
-            try {
-                conexion = DriverManager.getConnection("jdbc:postgresql://rogdomain.ddns.net:5432/hacialaigualdad", "generico", "generico").createStatement();
-            } catch (SQLException e) {
-                conexion = null;
-            }
-            contadorIntentosDeConexion++;
-        } while (conexion==null && contadorIntentosDeConexion<10);
+        url = "jdbc:postgresql://192.168.1.243:5432/hacialaigualdad";     //sslfactory=org.postgresql.ssl.NonValidatingFactory&ssl=true;
 
-        //Si no se ha podido conectar pone "false" en la variable "conexionCorrecta".
-        if (conexion==null) {
-            conexionCorrecta=false;
-        }
-    }
-
-
-    //Insertar el comentario
-    private void insertarComentario() { //Te he puesto lo mismo onClick del boton, sino no me dejaba ponerle el evento, cambialo si quieres
-        String insertar="INSERT INTO comentarios (comentario) VALUES ("+comentario.getText().toString()+");";
-
-
-
-        //No está terminado.
-
-
-
-    }
-
-
-    //Cerrar la conexion a la base de datos.
-    private void cerrarConexion() {
         try {
-            conexion.close();
+
+            conexion = DriverManager.getConnection(url, "generico", "generico");
+
+            Toast.makeText(this, "Conexion creada", Toast.LENGTH_LONG).show();
+
         } catch (SQLException e) {
             e.printStackTrace();
+
+            Toast.makeText(this, "F en el chat", Toast.LENGTH_LONG).show();
         }
+
+
+
     }
 
     @Override
     public void onClick(View v) {
-        String insertar="INSERT INTO comentarios (comentario) VALUES ("+comentario.getText().toString()+");";
 
 
 
-        //No está terminado.
     }
 }
