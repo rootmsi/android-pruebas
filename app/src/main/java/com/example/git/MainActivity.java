@@ -38,10 +38,14 @@ public class MainActivity extends AppCompatActivity {
     public  boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         Intent intent;
+
+        /*
         if (id == R.id.item_cues) {
             intent = new Intent(this, activity_6.class);
             startActivity(intent);
         }
+        //Comentado hasta que consigamos que funcione el cuestionario.
+        */
 
         if(id == R.id.item_acerca){
             intent = new Intent(this, activity_8.class);
