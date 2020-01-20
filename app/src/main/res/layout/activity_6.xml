@@ -136,6 +136,7 @@
         android:layout_marginStart="164dp"
         android:layout_marginLeft="164dp"
         android:layout_marginTop="40dp"
+        android:background="@drawable/forma_boton"
         android:onClick="onClick"
         android:text="@string/A6_btnEnviar"
         app:layout_constraintStart_toStartOf="parent"

@@ -16,7 +16,7 @@
         android:layout_marginTop="404dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:background="#00000000"
+        android:background="@drawable/forma_boton"
         android:onClick="continuar"
         android:text="@string/bt1"
         android:textSize="24sp"

@@ -11,12 +11,17 @@
     <string name="A2_imagen"></string>
 
     <string name="A3_titulo">Do you think the two images have the same impact?</string>
+    <string name="A3_btsi">Yes</string>
+    <string name="A3_btno">No</string>
 
     <string name="A4_enunciado">Global Humanitarian is an NGO that developes projects to reduce gender inequality in many countries around the world, if you want to colaborate press the SMS button.</string>
     <string name="A4_boton">Send SMS</string>
+    <string name="A4_boton_opinar">Participate in survey</string>
 
     <string name="A5_descripcionGuardiaCivil">Excerpt from the civil guard website</string>
     <string name="A5_descripcion016">Dial 016</string>
+    <string name="A5_titulo">
+Gender Violence always warns. At the first sign of abuse, CALL</string>
 
     <string name="A6_pregunta1">Have you ever raise your hand to another person?</string>
     <string name="A6_res11">Yes</string>

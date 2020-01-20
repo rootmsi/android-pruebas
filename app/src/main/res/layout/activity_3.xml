@@ -64,14 +64,16 @@
         <Button
             android:id="@+id/buttonSi"
             android:layout_width="127dp"
-            android:layout_height="83dp"
-            android:text="SÍ" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/forma_boton"
+            android:text="@string/A3_btsi" />
 
         <Button
             android:id="@+id/buttonNo"
             android:layout_width="127dp"
-            android:layout_height="83dp"
-            android:text="NO" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/forma_boton"
+            android:text="@string/A3_btno" />
     </LinearLayout><![CDATA[
 
 

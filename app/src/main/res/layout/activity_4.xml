@@ -32,7 +32,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="159dp"
         android:layout_marginRight="159dp"
-        android:background="#00000000"
+        android:background="@drawable/forma_boton"
         android:text="@string/A4_boton"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,4 +50,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12"
         app:srcCompat="@drawable/sms" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/forma_boton"
+        android:text="@string/A4_boton_opinar"
+        app:layout_constraintEnd_toEndOf="@+id/buttonSMS"
+        app:layout_constraintStart_toStartOf="@+id/buttonSMS"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSMS" />
 </androidx.constraintlayout.widget.ConstraintLayout>

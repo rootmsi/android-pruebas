@@ -44,7 +44,7 @@
             android:id="@+id/button5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#00000000"
+            android:background="@drawable/forma_boton"
             android:onClick="ira3"
             android:text="@string/A2_boton1" />
 
@@ -52,7 +52,7 @@
             android:id="@+id/button6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#00000000"
+            android:background="@drawable/forma_boton"
             android:onClick="ira4"
             android:text="@string/A2_boton2" />
 
@@ -60,7 +60,7 @@
             android:id="@+id/button7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#00000000"
+            android:background="@drawable/forma_boton"
             android:onClick="ira5"
             android:text="@string/A2_boton3" />
     </LinearLayout>

@@ -10,13 +10,17 @@
     <string name="A2_imagen"></string>
 
     <string name="A3_titulo">"¿Crees que tienen la misma repercusión las dos imágenes?"</string>
+    <string name="A3_btsi">Sí</string>
+    <string name="A3_btno">No</string>
 
 
     <string name="A4_enunciado">Global Humanitaria es una ONG que desarrolla proyectos para reducir la desigualdad de género en muchos países del mundo, si quieres colaborar pulsa el boton SMS.</string>
     <string name="A4_boton">Enviar SMS</string>
+    <string name="A4_boton_opinar">Participar en encuesta</string>
 
     <string name="A5_descripcionGuardiaCivil">Extracto de la página web de la guardía civil</string>
     <string name="A5_descripcion016">Marcar 016</string>
+    <string name="A5_titulo">La Violencia de genero siempre avisa.A la primera señal de malos tratos, LLAMA</string>
 
     <string name="A6_pregunta1">¿Alguna vez has levantado la mano a otra persona?</string>
     <string name="A6_res11">Sí</string>
