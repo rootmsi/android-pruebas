@@ -22,15 +22,13 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="225dp"
-            android:layout_height="415dp"
-            app:srcCompat="@drawable/fotochico" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="20dp"
+            app:srcCompat="@drawable/torsos" />
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="189dp"
-            android:layout_height="414dp"
-            app:srcCompat="@drawable/fotochica" />
+
 
     </LinearLayout>
 
@@ -38,11 +36,9 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
+
+        android:gravity="center"
+        android:layout_marginTop="30dp"
         android:text="@string/A3_titulo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,19 +70,5 @@
             android:layout_height="wrap_content"
             android:background="@drawable/forma_boton"
             android:text="@string/A3_btno" />
-    </LinearLayout><![CDATA[
-
-
-
-    @string/A3_titulo"
-    android:textSize="18sp"
-    android:textStyle="bold"
-    app:fontFamily="monospace"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
-
-
-
-]]>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
